@@ -3,32 +3,23 @@ package test;
 import data.DataHelper;
 import lombok.val;
 import org.junit.jupiter.api.Test;
+import page.DashboardPage;
 import page.LoginPageV1;
-//import page.LoginPageV2;
-//import page.LoginPageV3;
+
 
 
 import static com.codeborne.selenide.Selenide.open;
 
 class MoneyTransferTest {
+
+    private DashboardPage dashboardPage;
     @Test
     void shouldTransferMoneyBetweenOwnCardsV1() {
         open("http://localhost:9999");
         val loginPage = new LoginPageV1();
-       //   val loginPage = open("http://localhost:9999", LoginPageV1.class);
         val authInfo = DataHelper.getAuthInfo();
         val verificationPage = loginPage.validLogin(authInfo);
         val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-        verificationPage.validVerify(verificationCode);
+        dashboardPage = verificationPage.validVerify(verificationCode);
     }
-
-
-   // @Test
-   // void shouldTransferMoneyBetweenOwnCardsV3() {
-    //    val loginPage = open("http://localhost:9999", LoginPageV3.class);
-    //    val authInfo = DataHelper.getAuthInfo();
-   //     val verificationPage = loginPage.validLogin(authInfo);
-    //    val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-   //     verificationPage.validVerify(verificationCode);
-  //  }
 }

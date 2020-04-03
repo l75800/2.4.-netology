@@ -2,6 +2,9 @@ package data;
 
 import lombok.Value;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataHelper {
     private DataHelper() {}
 
@@ -27,4 +30,20 @@ public class DataHelper {
     public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
         return new VerificationCode("12345");
     }
+
+
+    @Value
+    public static class Card {
+        String cardNumber;
+    }
+
+    public static List <Card> getCardInfo () {
+        List <Card> cards = new ArrayList<>();
+        cards.add(new Card("5559 0000 0000 0001"));
+        cards.add(new Card("5559 0000 0000 0002"));
+        return cards;
+    }
 }
+
+
+

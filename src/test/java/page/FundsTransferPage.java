@@ -35,11 +35,4 @@ public class FundsTransferPage {
     public void setError_notification () {
         Error_notification.shouldBe(Condition.visible);
     }
-
-
-
-
-
-
-
 }

@@ -13,7 +13,7 @@ public class MoneyTransferTest {
 
     private DashboardPage dashboardPage;
 
-    void openBoard () {
+    void openPage () {
         open("http://localhost:9999");
         val loginPage = new LoginPageV2();
         val authInfo = DataHelper.getAuthInfo();
@@ -23,18 +23,13 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferMoneyBetweenOwnCards(
-            int recipientIndex,
-            int senderIndex,
-            String recipientCardNumber,
-            String senderCardNumber) {
-        val recipientTransferCardBalance = dashboardPage.getBalance(recipientCardNumber);
-        val senderCardBalanceBeforeTransfer = dashboardPage.getBalance(senderCardNumber);
-        val fundsTransferPage = dashboardPage.replenishCardAccount(recipientIndex);
+    void shouldTransferMoneyBetweenOwnCards() {
+        val recipientTransferCardBalance = dashboardPage.getBalance();
+        val senderCardBalanceBeforeTransfer = dashboardPage.getBalance();
+        val fundsTransferPage = dashboardPage.replenishCardAccount();
         val cards = DataHelper.getCardInfo();
         String amount = String.valueOf(senderCardBalanceBeforeTransfer / 2);
-        dashboardPage = fundsTransferPage.validTransferFunds(cards, amount, senderIndex);
-        val recipientCardBalanceAfterTransfer = dashboardPage.getBalance(recipientCardNumber);
+        dashboardPage = fundsTransferPage.validTransferFunds();
     }
 }
 

@@ -16,7 +16,6 @@ public class DashboardPage {
     private final List<SelenideElement> Reflenish_buttons = $$("[data-test-id=action-deposit]");
 
 
-
     public DashboardPage() {
         SelenideElement heading = $("[data-test-id=dashboard]");
         heading.shouldBe(visible);
@@ -32,6 +31,4 @@ public class DashboardPage {
         String sumInfo = cardInfo.substring(cardInfo.indexOf("баланс:") + 7, cardInfo.lastIndexOf("р.")).trim();
         return Integer.parseInt(sumInfo);
     }
-
-
 }

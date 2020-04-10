@@ -14,9 +14,10 @@ public class FundsTransferPage {
     private SelenideElement Action_button = $("[data-test-id=action-transfer]");
 
 
-    public FundsTransferPage(DataHelper.Card card) {
-        Amount_field.shouldBe(visible);
-    }
+//    public FundsTransferPage(DataHelper.Card card) {
+//
+//        Amount_field.shouldBe(visible);
+//    }
 
     public DashboardPage validCard (DataHelper.Card card) {
         Action_dep.click();

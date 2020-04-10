@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataHelper {
-    private DataHelper() {}
+    private DataHelper() {
+    }
 
     @Value
     public static class AuthInfo {
@@ -19,6 +20,7 @@ public class DataHelper {
     }
 
     public static AuthInfo getOtherAuthInfo(AuthInfo original) {
+
         return new AuthInfo("petya", "123qwerty");
     }
 
@@ -28,6 +30,7 @@ public class DataHelper {
     }
 
     public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
+
         return new VerificationCode("12345");
     }
 

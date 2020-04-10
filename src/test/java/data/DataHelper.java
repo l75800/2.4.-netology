@@ -40,12 +40,24 @@ public class DataHelper {
         String cardNumber;
     }
 
-    public static List <Card> getCardInfo () {
-        List <Card> cards = new ArrayList<>();
-        cards.add(new Card("5559 0000 0000 0001"));
-        cards.add(new Card("5559 0000 0000 0002"));
-        return cards;
+    public static Card getFirstCard (){
+
+        return new Card("5559 0000 0000 0001");
     }
+
+    public static Card getSecondCard (){
+        return new Card("5559 0000 0000 0002");
+    }
+
+
+
+
+//    public static List <Card> getCardInfo () {
+//        List <Card> cards = new ArrayList<>();
+//        cards.add(new Card("5559 0000 0000 0001"));
+//        cards.add(new Card("5559 0000 0000 0002"));
+//        return cards;
+//    }
 }
 
 

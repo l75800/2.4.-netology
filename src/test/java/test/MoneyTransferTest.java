@@ -9,15 +9,17 @@ import page.LoginPageV2;
 public class MoneyTransferTest {
 
     @Test
-    void transferPage () {
+    void transferPageCard () {
         val loginPage = new LoginPageV2();
         val transferPage = new FundsTransferPage();
         val authInfo = DataHelper.getAuthInfo();
         val verificationPage = loginPage.validLogin(authInfo);
         val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
-        val card = DataHelper.getCardInfo();
+        val card = DataHelper.getFirstCard();
+        val cardTwo = DataHelper.getSecondCard();
         val cardReplenishmen = transferPage.validCard(card);
+        val cardReplenishmenTwo = transferPage.validCard(cardTwo);
     }
 }
 
